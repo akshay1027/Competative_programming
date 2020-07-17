@@ -7,7 +7,7 @@ int main()
     string a;
     cin>>a;
 
-    int n = a.length();
+    int n = a.length(); //returns length
     char b;
 
     for(int i=0;i<n;i++)
