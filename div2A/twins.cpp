@@ -7,20 +7,20 @@ int main()
     int n;
     long long int sum=0,coins=0;
     cin>>n;
-    int xoxo[n];
+    int a[n];
     for(int i=0;i<n;i++)
     {
-        cin>>xoxo[i];
-        sum=sum+xoxo[i];
+        cin>>a[i];
+        sum=sum+a[i];
     }
-    sort(xoxo,xoxo+n,greater<int>());
-    long long int hehe=0,left=sum;
+    sort(a,a+n,greater<int>());
+    long long int b=0,left=sum;
     for(int i=0;i<n;i++)
     {
-        hehe=hehe+xoxo[i];
+        b=b+a[i];
         coins++;
-        left=sum-hehe;
-        if(hehe>left)
+        left=sum-b;
+        if(b>left)
         {
             break;
         }
