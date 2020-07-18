@@ -1,3 +1,4 @@
+//the logic in this is different. This is the not the correct code for this problem.
 #pragma GCC optimize("O2") 
 #include<bits/stdc++.h>
 using namespace std;
