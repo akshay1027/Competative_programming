@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main()
-{ 
+{
     int a[3],i,x,y,b,c,d;
     for(i=0;i<3;i++)
         cin>>a[i];

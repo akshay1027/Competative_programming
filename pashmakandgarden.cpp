@@ -15,7 +15,7 @@ int main()
     else if(x2==x1)
     {
         y3=y1;
-        y4=y2;
+        y4=y2;  
         x3=x1+y2-y1;
         x4=x3;
         cout<<x3<<" "<<y3<<" "<<x4<<" "<<y4;
