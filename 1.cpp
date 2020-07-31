@@ -153,3 +153,121 @@ typedef vector < ii > vii;
 typedef long long int64;
 typedef unsigned long long uint64;
 typedef double float64;
+
+//  ** another ** //
+
+#include<bits/stdc++.h>
+using namespace std;
+#define M 1e9 + 7
+#define MAXN 1000005
+#define C 998244353
+#define pi 3.14159265359
+#define loop(i,a,b) for(ll i = ll(a); i < ll(b); ++i)
+#define rloop(i,a,b) for(ll i = ll(a); i >= ll(b); --i)
+#define sloop(i,a) for (std::set<ll>::iterator i = a.begin(); i != a.end(); ++i)
+#define pb push_back
+#define all(v) v.begin(),v.end()
+typedef long long int ll;
+typedef unsigned long long int ull;
+ 
+vector<ll> edges[MAXN],component,good(MAXN),ans;
+// bool done[MAXN];
+ll nodes = 0;
+void dfs(int m){
+    int flag=1;
+    for (std::vector<ll>::iterator i = edges[m].begin(); i != edges[m].end(); ++i)
+    {
+        if(!good[*i])
+            flag=0;
+        dfs(*i);
+    }
+    if(flag and good[m])
+        ans.pb(m);
+}
+int sum_dig(int n){
+    int sum=0;
+    while(n>0){
+        sum += n%10;
+        n/=10;
+    }
+    return sum;
+}
+int solve(){
+    ll n,k,a,b;
+    cin >> n;
+    k = ceil(n/4.0);
+    // cout << k << '\n';
+    loop(i,0,n-k){
+        cout << 9;
+    }
+    loop(i,0,k){
+        cout << 8;
+    }
+    cout << endl;
+    return 0;
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll t = 1;
+    cin >> t;
+    loop(f,0,t){    
+        solve();
+    }   
+}
+
+// **another **//
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#define all(x) (x).begin(), (x).end()
+ 
+using namespace __gnu_pbds;
+using namespace std;
+ 
+using ull = unsigned long long;
+using ll = long long;
+using ld = long double;
+template <typename T> using ordered_set = tree<T, null_type, less<>, rb_tree_tag, tree_order_statistics_node_update>;
+ 
+const int mod = 1e9 + 7;
+const int inf = INT_MAX;
+const int N = 300 + 5;
+ 
+struct point {
+    int x, y;
+    point(): x(), y() {}
+};
+ 
+int n;
+point a[N];
+ 
+int area(point p1, point p2, point p3) {
+    return p1.x * (p2.y - p3.y) + p2.x * (p3.y - p1.y) + p3.x * (p1.y - p2.y);
+}
+ 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+ 
+    cin >> n;
+    for (int i = 0; i < n; i++) cin >> a[i].x >> a[i].y;
+ 
+    int ans = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            int mx = 0, mn = 0;
+            for (int k = 0; k < n; k++) {
+                if (k == i or k == j) continue;
+                mx = max(mx, area(a[k], a[i], a[j]));
+                mn = min(mn, area(a[k], a[i], a[j]));
+            }
+ 
+            if (mx == 0 or mn == 0) continue;
+            ans = max(ans, mx - mn);
+        }
+    }
+ 
+    cout << fixed << setprecision(1) << ans / 2.0 << "\n";
+    return 0;
+}
