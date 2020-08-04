@@ -271,3 +271,98 @@ int main() {
     cout << fixed << setprecision(1) << ans / 2.0 << "\n";
     return 0;
 }
+
+
+
+
+/* Author : samarth
+   Handle : ssg_13 */
+ 
+//----------------------template begins--------------------------------//
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+ 
+using namespace std;
+using namespace __gnu_pbds;
+using namespace std::chrono;
+ 
+#define fast ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define F first
+#define S second
+#define mp make_pair
+#define mt make_tuple
+#define eb emplace_back //faster than pb
+#define pb push_back 
+#define Db(x) cout << '>' << #x << ':' << x << endl;
+#define forn(i,n) for(ll i=0;i<n;i++)
+#define rforn(i,n) for(ll i=n-1;i>=0;i--)
+#define forne(i,n) for(ll i=1;i<=n;i++)
+#define forse(i,s,e) for(ll i=s;i<e;i++)
+#define rforse(i,s,e) for(ll i=e;i>=s;i--)
+#define all(x) x.begin(),x.end()
+#define sz(x) (ll)x.size()
+#define fill(a,x) memset(a,x,sizeof a);
+#define trav(a,x) for(auto &a:x)
+#define PT palindromeTest	//Input - string, int, ll, l
+#define GS generateSubsets	//Input - n		//Return - vector<vector<int>>
+#define GP generatePermutations //Input - int n 	//Return - vector<vector<int>>
+#define PF primeFactorization	//Input - ll	//Return - vector<ll>
+#define nCr nCrModPFermat   //Input - n, r, p	//Return - nCr mod p
+#define error(args...) { string _s = #args; replace(_s.begin(), _s.end(), ',', ' '); stringstream _ss(_s); istream_iterator<string> _it(_ss); err(_it, args); }
+void err(istream_iterator<string> it) {}
+template<typename T, typename... Args>
+void err(istream_iterator<string> it, T a, Args... args) {
+	cerr << *it << " = " << a << endl;
+	err(++it, args...);
+}
+ 
+typedef long long ll;
+typedef pair<ll,ll> pll;
+typedef vector<ll> vll;
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_set;
+// find_by_order(i) return pointer to ith index in ordered set
+ 
+ 
+const ll MOD = 1000000007;
+ll modpow(ll a,ll b,ll m=MOD) {a%=m;ll res=1;while(b){if(b&1)res=res*a%m;a=a*a%m;b>>=1;}return res;}
+ll bpow(ll a, ll b) {ll res = 1;while(b){if(b&1)res=res*a;a=a*a;b>>=1;}return res;}
+ll modinv(ll a){return modpow(a,MOD-2,MOD);}
+void graph(vector<ll> adj[], ll m){ll x, y; forn(i, m){cin>>x>>y;adj[x-1].pb(y-1);adj[y-1].pb(x-1);}}
+ll sum() { return 0; }
+template<typename T, typename... Args>
+auto sum(T a, Args... args) { return a + sum(args...); }
+ 
+const ll INF=(ll)1e18;
+const int MAXN = 200001;
+//----------------------template ends--------------------------------//
+ 
+int32_t main()
+{
+fast;
+// freopen("input.txt", "r", stdin);
+// freopen("output.txt", "w", stdout);
+cout << fixed << setprecision(11);
+cerr << fixed << setprecision(6);
+auto start = high_resolution_clock::now();
+ll T;
+// cin>>T;
+T=1;
+while(T--)
+{
+    ll n;
+    cin>>n;
+    ll x[n];
+    ll g;
+    forn(i,n) 
+    {
+        cin>>x[i];
+        g=(i==0)?x[i]:__gcd(x[i],g);
+    }
+    cout<<n*g<<'\n';
+}
+auto stop = high_resolution_clock::now(); 
+auto duration = duration_cast<microseconds>(stop - start);
+// cout << "Time taken by function: "
+//          << duration.count() << " microseconds" << endl; 
+}
