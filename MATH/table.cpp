@@ -15,17 +15,26 @@ using namespace std;
  
 signed main()
 {   
-    fastio; 
-    string s[] = {"O-|-OOOO", "O-|O-OOO", "O-|OO-OO", "O-|OOO-O", "O-|OOOO-", "-O|-OOOO", "-O|O-OOO", "-O|OO-OO", "-O|OOO-O", "-O|OOOO-"};
-
-    int n;
-    cin >> n;
-    do{
-        int d = n%10;
-        cout << s[d] << endl;
-        n = n/10;
-    }while(n > 0);
-
-    return 0;
- 
+  fastio; 
+  int n,m;
+  cin>>n>>m;
+  bool flag=0;
+  int arr[n+5][m+5];
+  for(int i=1;i<=n;i++)
+  {
+  for(int j=1;j<=m;j++)
+  {
+  cin>>arr[i][j];
+  if((i==1||j==1||i==n||j==m)&&arr[i][j]==1)
+  {
+   flag=1;
+  }
+  }
+  }
+  if(flag==1){
+    cout<<2;
+  }else{
+  cout<<4;
+  }
+  return 0;
 }
