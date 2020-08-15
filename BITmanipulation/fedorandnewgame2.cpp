@@ -5,7 +5,7 @@ int main()
 {
 	ll n,m,k;
 	cin>>n>>m>>k;
-	vec v(m+1);
+	vector <ll> v(m+1);
 	for(ll i=0;i<m+1;i++)
 	cin>>v[i];
 	
@@ -15,8 +15,8 @@ int main()
 	for(ll i=0;i<m;i++)
 	{
 		int y = x^v[i];
-		bitset<64> bset(y);
-		if(bset.count() <= k) cnt++;
+		bitset<64> bset(y); // initialised with bits of y.
+		if(bset.count() <= k) cnt++;  // couts number of ones in bits of y.
 	}
 	
 	cout<<cnt;
