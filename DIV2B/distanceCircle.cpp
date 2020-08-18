@@ -13,14 +13,10 @@ using namespace std;
 signed main()
 {   
   fastio; 
-  test
-  {
-    int a, b;
-    cin >> a >> b;
-    if (a > b) swap(a, b);
-    int c= max(2 * a, b);
-    cout << c*c << endl;
-  }
-    return 0;
+  long double r,x1,y1,x2,y2,d;
+         cin>>r>>x1>>y1>>x2>>y2;
+         d=sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)); // distance between the circles from its centre.
+         cout<<ceil(d/(2*r))<<endl;
     
-  }
+    return 0;
+}
