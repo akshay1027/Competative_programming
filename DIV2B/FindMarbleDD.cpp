@@ -13,15 +13,27 @@ using namespace std;
  
 signed main()
 {   
-  fastio; 
-  test
-  {
-    int a, b;
-    cin >> a >> b;
-    if (a > b) swap(a, b);
-    int c= max(2 * a, b);
-    cout << c*c << endl;
-  }
-    return 0;
-    
-  }
+    fastio;
+    int n, s, t;
+	cin >> n >> s >> t;
+	int p[n];
+	for(int i = 0;i < n;i++){
+		cin >> p[i];
+	}
+	if(t == s){
+		cout << 0 << "\n";
+		return 0;
+	}
+	int count = 1;
+	int x = p[s-1];
+	while(x != t) {
+		if(x == s) {
+			cout << -1 << endl;
+			return 0;
+		}
+		count++;
+		x = p[x - 1];
+	}
+	cout << count << endl;
+	return 0;
+} 

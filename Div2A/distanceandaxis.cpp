@@ -2,7 +2,7 @@
 #define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define test int T; cin>>T; while(T--)
 #define ll long long
-#define G(x) ll x; cin >> x;
+#define G(x) int x; cin >> x;
 #define vi vector<int>
 #define pb push_back
 #define mp make_pair
@@ -13,15 +13,15 @@ using namespace std;
  
 signed main()
 {   
-  fastio; 
-  test
+  fastio;
+  int t; cin>>t;
+  while(t--)
   {
-    int a, b;
-    cin >> a >> b;
-    if (a > b) swap(a, b);
-    int c= max(2 * a, b);
-    cout << c*c << endl;
+    int n, k; cin >> n >> k;
+		if(k >= n) cout << k-n << "\n";
+		else cout << (n-k)%2 << "\n";
   }
-    return 0;
-    
-  }
+  
+
+  return 0;
+}

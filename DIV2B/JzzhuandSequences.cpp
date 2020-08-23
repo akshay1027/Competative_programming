@@ -14,14 +14,18 @@ using namespace std;
 signed main()
 {   
   fastio; 
-  test
-  {
-    int a, b;
-    cin >> a >> b;
-    if (a > b) swap(a, b);
-    int c= max(2 * a, b);
-    cout << c*c << endl;
-  }
+  ll ans;
+  G(x) G(y) G(n)
+  cin >> x >> y >> n;
+ 
+    if(n%6 == 0) ans = x - y;
+    if(n%6 == 1) ans = x;
+    if(n%6 == 2) ans = y;
+    if(n%6 == 3) ans = y - x;
+    if(n%6 == 4) ans = -x;
+    if(n%6 == 5) ans = -y;
+    cout << (ans % mod + mod)%mod;
+ 
     return 0;
-    
-  }
+}
+  
