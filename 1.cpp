@@ -271,3 +271,6 @@ int main() {
     cout << fixed << setprecision(1) << ans / 2.0 << "\n";
     return 0;
 }
+
+vector <int> a;
+for()
